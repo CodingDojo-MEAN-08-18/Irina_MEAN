@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jsobjects</title>
+</head>
+<body>
+      
+</body>
+
+<script type="text/javascript"> 
+//Challenge #1
+let students = [
+    {name: 'Remy', cohort: 'Jan'},
+    {name: 'Genevieve', cohort: 'March'},
+    {name: 'Chuck', cohort: 'Jan'},
+    {name: 'Osmund', cohort: 'June'},
+    {name: 'Nikki', cohort: 'June'},
+    {name: 'Boris', cohort: 'June'}];
+
+function students_cohort() {
+
+    for(let i=0; i<=students.length; i++){
+        console.log(students[i].name, " ", students[i].cohort)
+    }
+}
+
+students_cohort(students)
+
+
+
+//Challenge #2
+let users = {
+    employees: [
+        {'first_name':  'Miguel', 'last_name' : 'Jones'},
+        {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+        {'first_name' : 'Nora', 'last_name' : 'Lu'},
+        {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+    ],
+    managers: [
+       {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+       {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+    ]
+ };
+function emp_managers(){
+        for (let group in users){
+            console.log(group);
+                for(let i = 0; i < users[group].length; i++){
+                    let name_len = users[group][i].last_name.length  + users[group][i].first_name.length;
+                    console.log(i+1, '-',users[group][i].last_name, users[group][i].first_name, '-' ,name_len);
+                }
+        }
+}
+
+emp_managers(users)
+
+</script>
+</html>
