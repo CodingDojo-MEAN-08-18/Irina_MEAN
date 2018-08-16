@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hunting Github</title>
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+</head>
+
+<body>
+
+    <form>
+        <input type="button" id="button" value="Get Github!">
+    </form>
+  
+</body>
+
+<script type="text/javascript">
+
+	 $(document).ready(function(){
+
+	 	$('#button').click(function(){
+	 		$.get("https://api.github.com/users/iakovleva1980", displayName)
+
+	 	});
+	 });
+
+
+	 function displayName(data){
+		 console.log(data);
+		 //document.write(data);
+
+	 }
+	
+</script>
+</html>
