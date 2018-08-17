@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Ninja Constructor</title>
+<style>
+
+</style>
+</head>
+
+<body>
+</body>
+<script>
+function NinjaClass(name){
+
+    self = this;
+    var ninja ={};
+
+    var strength = 3;
+    var speed = 3;
+
+    this.name=name;
+    this.health = 100;
+    this.sayName = function(){
+
+        console.log("My ninja name is " + this.name+"!");
+
+    }
+
+    this.showStats = function(){
+        console.log("Name: " + this.name +","+ "Health:  " + this.health +","+ "Speed: " + speed +"," + "Strength: " + strength);
+    }
+
+    this.drinkSafe = function(){
+        console.log(this.health + 10);
+    }
+
+}
+
+var ninja1 = new NinjaClass("Hyabusa");
+ninja1.sayName();
+ninja1.showStats();
+ninja1.drinkSafe();
+
+
+</script>
+</html>
+
