@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Ninja Constructor</title>
+<style>
+
+</style>
+</head>
+
+<body>
+</body>
+<script>
+function NinjaClass(name){
+
+    self = this;
+
+    var ninja ={};
+    var strength = 3;
+    var speed = 3;
+
+    this.name=name;
+    this.health = 100;
+
+    this.sayName = function(){
+        console.log("My ninja name is " + this.name+"!");
+    }
+
+
+    this.showStats = function(){
+        console.log("Name:" + this.name +","+ " Health:" + this.health +","+ " Speed:" + speed +"," + " Strength:" + strength);
+    }
+
+
+    this.drinkSafe = function(){
+        this.health += 10;
+    }
+
+
+    this.punch = function(){
+        this.health -=5;
+    }
+
+    this.kick = function(ninja){
+        //takes 5 health for every point of strength
+        //then takes points from the ninja's health passed into function
+        damage = strength * 5;
+        ninja.health -= damage;
+        //takes ninja's name passed and how much damage he lost from the ninja that kicked him.
+        console.log(ninja.name + " was kicked by " + this.name + " and lost " + damage + " health!");
+    }
+
+    this.punch = function(ninja){
+        ninja.health -= 5;
+        console.log(ninja.name + " was punched by " + this.name + " and lost " + 5 + " health!");
+    }
+
+}
+
+
+const blueNinja = new NinjaClass("Goemon");
+const redNinja = new NinjaClass("Bill Gates");
+redNinja.punch(blueNinja);
+blueNinja.kick(redNinja);
+redNinja.showStats();
+blueNinja.showStats();
+
+
+
+</script>
+</html>
+
