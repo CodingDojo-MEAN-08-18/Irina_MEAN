@@ -1,0 +1,109 @@
+<html>
+<head>
+
+<title>Deck of cards</title>
+
+</head>
+<body>
+
+</body>
+
+<script>
+
+class Card{
+    constructor(suit,strValue){
+        this.suit=suit;
+        this.strValue=strValue;
+    }
+
+
+    show(){
+        console.log(`'Card suit:' ${this.suit}, 'string value:' ${this.strValue}`);
+    }
+
+}
+
+//var card1 = new Card('Clubs', 'Queen');
+//var card2 = new Card('Diamonds', '8');
+//card1.show();
+//card2.show();
+
+
+class Deck{
+    constructor(){
+        this.deck=[];
+        this.reset();
+    }
+
+    reset(){
+        this.deck=[];
+        this.suits=["Hearts", "Clubs", "Diamonds", "Spades"];
+        this.strValues=["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King","Ace"];
+
+        for (let i=0; i<this.suits.length; i++){
+            for(let y=0; y<this.strValues.length; y++){
+                let b=this.suits[i];
+                let c=this.strValues[y];
+                let card=new Card(b,c, 1);
+                this.deck.push(card);
+            }
+        }
+    }
+
+
+    shuffle(){
+        let m = this.deck.length, t, i;
+
+  // While there remain elements to shuffle…
+        while (m) {
+
+    // Pick a remaining element…
+            i = Math.floor(Math.random() * m--);
+
+            // And swap it with the current element.
+            t = this.deck[m];
+            this.deck[m] = this.deck[i];
+            this.deck[i] = t;
+        }
+    }
+
+
+    deal() {
+        let val_pop=this.deck.pop();
+        console.log("Deal:", val_pop);
+        return val_pop;
+    }
+
+
+    cardCount() {
+        return this.deck.length;
+    }
+
+}
+
+
+
+class Player{
+    constructor(){
+        this.name=name;
+        this.hand=[];
+    }
+    take_card(card){
+        this.hand.push(card);
+        console.log("Take Card:",card);
+
+    }
+}
+
+
+const deck1=new Deck();
+const player1=new Player("irina");
+deck1.shuffle();
+deck1.cardCount();
+returned_card=deck1.deal();
+player1.take_card(returned_card);
+
+
+
+</script>
+</html>
