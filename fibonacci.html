@@ -1,0 +1,35 @@
+<html>
+<head>
+
+<title>Deck of cards</title>
+
+</head>
+<body>
+
+</body>
+
+<script>
+
+function fib() {
+    // Some variables here
+    let prevNum  = 0;
+    let currentNum = 1;
+
+    function nacci(num) {
+        const temporary = prevNum;
+        console.log(currentNum);
+
+        prevNum = currentNum;
+        currentNum = currentNum + temporary;
+    }
+    return nacci
+}
+const fibCounter = fib();
+fibCounter(); // should console.log "1"
+fibCounter(); // should console.log "1"
+fibCounter(); // should console.log "2"
+fibCounter(); // should console.log "3"
+fibCounter(); // should console.log "5"
+fibCounter(); // should console.log "8"
+</script>
+</html>
