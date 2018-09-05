@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.options{
+    padding: 20px;
+}
+
+form{
+    display: inline-block;
+}
+
+input{
+    padding: 10px;
+}
