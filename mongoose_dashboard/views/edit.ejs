@@ -18,11 +18,11 @@
         </form>
         <br>
         <form action="/delete/<%=meer._id%>" method="post">
-            <input type="submit" value="DELETE THIS MEERKAT">
+            <input type="submit" value="Delete this merkat">
         </form>          
     </body>
     <% if(typeof(errors) != 'undefined' ) { %>
-        <span style="color: red">Something went wrong</span>
+        <span style="color: red">Something is incorrect</span>
         <p><%= errors%></p>
         <% for (var x in errors) { %>
             <h3><%= errors[x].messages %></h3>
