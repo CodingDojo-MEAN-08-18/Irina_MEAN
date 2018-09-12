@@ -6,7 +6,6 @@ var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/QD_DB', {useMongoClient: true});
 
-// Use native promises
 mongoose.Promise = global.Promise;
 
 
@@ -84,7 +83,5 @@ app.get('/meerkats/:id', function(req, res) {
         res.render('meerkat', {meer:meerkat});
     })
 });
-
-  // Setting our Server to Listen on Port: 8000
 app.listen(8000, function() {
 });
