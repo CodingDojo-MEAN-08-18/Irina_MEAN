@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Quoting Dojo</title>
+</head>
+<body>
+    <h1>Welcome to QuotingDojo</h1>
+    <form action="/add" method="post">
+        <table>
+            <tr>
+                <td>Your Name:</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <br>
+            <tr>
+                <td>Your Quote:</td>
+                <td>
+                    <textarea name="message" rows="5" cols="100"></textarea>
+                </td>
+            </tr>
+            <br>
+        </table>
+        <input type="submit" value="add quote">
+    </form>
+    <a href="/quotes">Go to quotes</a>
+</body>
+    <% if(typeof(errors) != 'undefined' ) { %>
+        <span style="color: red">Something is incorrect</span>
+        <p><%= errors%></p>
+        <% for (var x in errors) { %>
+         <h3><%= errors[x].messages %></h3>
+        <% } %>
+    <% } %>
+</body>
+</html>
