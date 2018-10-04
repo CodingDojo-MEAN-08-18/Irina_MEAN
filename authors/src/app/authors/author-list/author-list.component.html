@@ -1,0 +1,20 @@
+<section>
+  <table>
+    <thead>
+      <th>Id</th>
+      <th>Author</th>
+      <th>Avaialble actions</th>
+    </thead>
+    <tbody>
+      <tr *ngFor='let author of authors'>
+        <td>{{ author._id }}</td>
+        <td>{{ author.author }}</td>
+        <td (click)='onEvent($event)'>
+          <button [routerLink]='author._id'>Update</button>
+          <button (click)='onRemove(author)'>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>

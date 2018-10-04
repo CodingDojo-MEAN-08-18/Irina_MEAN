@@ -1,0 +1,12 @@
+<section>
+  <fieldset>
+    <legend>Author</legend>
+    <div>
+        <label for="name">Author</label>
+        <input type="text" name="name" [(ngModel)]='Author.name' required minlength='3'>
+    </div>
+
+      <button class='btn btn-success' type='submit'>Submit</button>
+	  <button class='btn btn-warning' routerLink='/'>Cancel</button>
+  </fieldset>
+</section>
