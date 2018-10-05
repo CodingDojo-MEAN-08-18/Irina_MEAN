@@ -1,0 +1,27 @@
+<div id="wrapper">
+  <h1>Anonymous Notes</h1>
+  <div id="add">
+    <form (submit)="onSubmit()">
+      Note:  <input type="text" name="quote" style="width: 80%; margin-left: 5px;"
+      required
+      minlength="3"
+      [(ngModel)]="quote.text"
+      #text="ngModel">
+      <input *ngIf="!(text.valid)" disabled=true type="submit" value="Add a Quote" />
+      <input *ngIf="text.valid" type="submit" value="Add a Quote" />
+      <p *ngIf="!text.valid" style="color:red">Quote must be 3 letters</p>
+    </form>
+  </div>
+  <br>
+  <div id="disp">
+    <div *ngFor="let x of this.quotes"> 
+      <div class="quote">
+        <div class="top">
+          <p style="margin-top:0%">Noted on: {{x.createdAt | date : "medium"  }} </p>
+        </div>
+        <p>{{x.text}}</p>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
